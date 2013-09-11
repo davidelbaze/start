@@ -16,7 +16,7 @@ class Server {
 
   Future<Server> listen(String host, num port) {
     
-	return HttpServer.bind(host, port).then((HttpServer) {
+	return HttpServer.bind(host, port).then((server) {
 	
       _server = server;
       _server.listen((HttpRequest req) {
