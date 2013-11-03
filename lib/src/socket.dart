@@ -9,7 +9,7 @@ class Socket implements SocketBase {
   Socket(this._ws) {
     _messages = _messageController.stream.asBroadcastStream();
     _ws.listen((data) {
-      var msg = new Message.fromPacket(data);
+      var msg = new Message(data);
       _messageController.add(msg);
     },
     onDone: () {

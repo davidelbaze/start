@@ -15,9 +15,7 @@ class Server {
   }
 
   Future<Server> listen(String host, num port) {
-    
-	return HttpServer.bind(host, port).then((server) {
-	
+    return HttpServer.bind(host, port).then((HttpServer server){
       _server = server;
       _server.listen((HttpRequest req) {
         _routes.firstWhere((Route route) => route.match(req),
