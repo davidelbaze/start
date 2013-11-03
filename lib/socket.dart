@@ -13,7 +13,7 @@ class Socket implements SocketBase {
     _messages = _messageController.stream.asBroadcastStream();
     _ws = new WebSocket(url);
     _ws.onMessage.listen((e) {
-      var msg = new Message(e.data);
+      var msg = new Message.fromPacket(e.data);
       _messageController.add(msg);
     });
   }
