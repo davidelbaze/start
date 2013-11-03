@@ -5,7 +5,7 @@ import 'src/socket_base.dart';
 
 class Socket implements SocketBase {
   WebSocket _ws;
-
+  WebSocket get raw => _ws;
   var _messageController = new StreamController();
   Stream _messages;
 
